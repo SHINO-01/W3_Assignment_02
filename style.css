@@ -1097,7 +1097,169 @@ button {
         gap: 1rem;
     }
 }
+/*==============================================FAQ AND TO KNOW SECTION===========================*/
+.info-section {
+    margin-bottom: 40px;
+}
 
+.info-title {
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.info-item {
+    line-height: 1.5;
+}
+
+.faq-section {
+    margin-top: 40px;
+}
+
+.faq-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.faq-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #2d2d2d;
+    cursor: pointer;
+}
+
+.faq-item::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    transform: rotate(-90deg);
+}
+
+/*=================================================reviews last=============================*/
+.rating {
+    font-size: 2.5rem;
+    color: #0F8A5F;
+    font-weight: bold;
+}
+
+.rating-subtitle {
+    font-size: 1.5rem;
+    color: #333;
+    margin-top: 5px;
+}
+
+.reviews-count {
+    color: #666;
+    margin-top: 5px;
+    font-size: 0.9rem;
+}
+
+.recent-reviews {
+    margin: 30px 0;
+}
+
+.reviews-title {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.review-cards {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 10px 0;
+    scroll-snap-type: x mandatory;
+}
+
+.review-card {
+    min-width: 300px;
+    max-width: 300px;
+    padding: 20px;
+    border-radius: 12px;
+    background: white;
+    border: 1px solid #e0e0e0;
+    scroll-snap-align: start;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.review-score {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.review-text {
+    color: #444;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.review-author {
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.review-date {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.read-more {
+    color: #0066cc;
+    text-decoration: none;
+    display: block;
+    margin-top: 10px;
+}
+
+.see-all {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #0066cc;
+    margin-top: 20px;
+}
+
+.host-section {
+    margin-top: 40px;
+}
+
+.host-title {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.languages {
+    margin-top: 20px;
+}
+
+.contact-host {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #fff;
+    border: 1px solid #0066cc;
+    color: #0066cc;
+    text-decoration: none;
+    border-radius: 8px;
+    margin-top: 20px;
+}
 
 /*-------------------------------------------------------ICONS-----------------------------------*/
 .fa-images {

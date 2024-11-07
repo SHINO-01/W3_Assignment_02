@@ -748,6 +748,7 @@ button {
     font-weight: 700;
     margin-bottom: 24px;
 }
+
 .property-title {
     font-size: 24px;
     color: #2c5282;
@@ -834,6 +835,7 @@ button {
 .policies-list li:last-child {
     border-bottom: none;
 }
+
 .note {
     color: #718096;
     font-style: italic;
@@ -849,7 +851,7 @@ button {
 }
 
 .property-manager {
-    margin-top:15px;
+    margin-top: 15px;
     padding: 0px;
     background: #f7fafc;
     border-radius: 12px;
@@ -877,6 +879,7 @@ button {
 .languages-list {
     color: #4a5568;
 }
+
 .amenities {
     margin: 24px 0;
 }
@@ -917,6 +920,7 @@ button {
 .see-all-amenities:hover {
     text-decoration: underline;
 }
+
 /*========================================================Questions=================================*/
 .question-section {
     background-color: #f0f7ff;
@@ -953,7 +957,8 @@ button {
     flex: 1;
     padding: 1rem;
     border: 1px solid #ddd;
-    border-radius: 8px 0 0 8px; /* Rounded left side only */
+    border-radius: 8px 0 0 8px;
+    /* Rounded left side only */
     font-size: 1rem;
     outline: none;
 }
@@ -965,7 +970,8 @@ button {
     padding: 0.75rem 1rem;
     cursor: pointer;
     font-size: 1.2rem;
-    border-radius: 0 8px 8px 0; /* Rounded right side only */
+    border-radius: 0 8px 8px 0;
+    /* Rounded right side only */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -987,6 +993,7 @@ button {
     border-radius: 4px;
     font-weight: 500;
 }
+
 /*=====================================================AFTER SEARCH=============================*/
 .rules-grid {
     display: grid;
@@ -1056,9 +1063,17 @@ button {
     background: #666;
 }
 
-.timeline-point:nth-child(1) { left: 0; }
-.timeline-point:nth-child(2) { left: 50%; }
-.timeline-point:nth-child(3) { right: 0; }
+.timeline-point:nth-child(1) {
+    left: 0;
+}
+
+.timeline-point:nth-child(2) {
+    left: 50%;
+}
+
+.timeline-point:nth-child(3) {
+    right: 0;
+}
 
 .timeline-labels {
     display: flex;
@@ -1091,12 +1106,13 @@ button {
     body {
         padding: 1rem;
     }
-    
+
     .rules-grid {
         grid-template-columns: 1fr;
         gap: 1rem;
     }
 }
+
 /*==============================================FAQ AND TO KNOW SECTION===========================*/
 .info-section {
     margin-bottom: 40px;
@@ -1150,115 +1166,234 @@ button {
 }
 
 /*=================================================reviews last=============================*/
-.rating {
-    font-size: 2.5rem;
-    color: #0F8A5F;
-    font-weight: bold;
+.rating-review-container {
+    display: flex;
+    gap: 32px;
+    /* Adjust spacing between rating and reviews */
+    align-items: flex-start;
 }
 
-.rating-subtitle {
-    font-size: 1.5rem;
-    color: #333;
-    margin-top: 5px;
+.main-rating {
+    margin-bottom: 32px;
+    margin-top: 30px;
 }
+
+.rating-big {
+    background-color: white;
+    color: green;
+    font-size: 64px;
+    font-weight: 500;
+    line-height: 1;
+    margin-bottom: 4px;
+}
+
+.exceptional-big {
+    font-size: 32px;
+    color: #222;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.info-icon-late {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #717171;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    cursor: help;
+}
+
+.verification-note-big {
+    font-size: 16px;
+    color: #717171;
+}
+
 
 .reviews-count {
-    color: #666;
-    margin-top: 5px;
-    font-size: 0.9rem;
+    color: #717171;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
 }
 
 .recent-reviews {
-    margin: 30px 0;
+    margin-bottom: 24px;
+    flex: 1;
+    /* Allows the reviews to take up remaining space */
+    margin-bottom: 24px;
+    margin-top: 30px;
 }
 
-.reviews-title {
-    font-size: 1.2rem;
-    color: #333;
-    margin-bottom: 15px;
+.recent-reviews h2 {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: #222;
 }
 
-.review-cards {
+.reviews-wrapper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.reviews-scroll {
     display: flex;
-    overflow-x: auto;
-    gap: 20px;
-    padding: 10px 0;
+    overflow-x: scroll;
     scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE/Edge */
+    gap: 24px;
+    padding-bottom: 20px;
+    /* Space for scroll area */
+}
+
+.reviews-scroll::-webkit-scrollbar {
+    display: none;
+    /* Chrome/Safari/Opera */
 }
 
 .review-card {
-    min-width: 300px;
-    max-width: 300px;
-    padding: 20px;
-    border-radius: 12px;
+    flex: 0 0 auto;
+    width: 375px;
     background: white;
-    border: 1px solid #e0e0e0;
+    border: 1px solid #DDDDDD;
+    border-radius: 12px;
+    padding: 24px;
     scroll-snap-align: start;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
-.review-score {
-    font-weight: bold;
-    margin-bottom: 10px;
+.review-rating {
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 12px;
 }
 
 .review-text {
-    color: #444;
-    line-height: 1.5;
-    margin-bottom: 15px;
-}
-
-.review-author {
-    font-weight: 500;
-    margin-bottom: 5px;
-}
-
-.review-date {
-    color: #666;
-    font-size: 0.9rem;
+    color: #222;
+    margin-bottom: 8px;
+    font-size: 16px;
+    line-height: 1.4;
 }
 
 .read-more {
-    color: #0066cc;
+    color: #006AFF;
     text-decoration: none;
+    font-size: 16px;
     display: block;
-    margin-top: 10px;
+    margin-bottom: 16px;
 }
 
-.see-all {
+.reviewer-name {
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.review-date {
+    color: #717171;
+    font-size: 14px;
+}
+
+.see-all-reviews {
     display: inline-flex;
     align-items: center;
-    padding: 8px 16px;
-    border: 1px solid #e0e0e0;
-    border-radius: 20px;
+    padding: 13px 23px;
+    border: 1px solid #DDDDDD;
+    border-radius: 25px;
     text-decoration: none;
-    color: #0066cc;
-    margin-top: 20px;
+    color: #006AFF;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.2s;
 }
 
-.host-section {
-    margin-top: 40px;
+.see-all-reviews:hover {
+    background-color: #e8eaf0;
 }
 
-.host-title {
-    font-size: 1.5rem;
-    color: #333;
-    margin-bottom: 20px;
+.host-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
-.languages {
-    margin-top: 20px;
+.about-section {
+    display: flex;
+    align-items: center; /* Aligns items vertically centered */
+    gap: 8px; /* Adjusts spacing between title and host name */
 }
 
-.contact-host {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #fff;
-    border: 1px solid #0066cc;
-    color: #0066cc;
-    text-decoration: none;
-    border-radius: 8px;
-    margin-top: 20px;
+.about-section h2 {
+    margin: 0;
+    font-size: 32px;
+}
+
+.host-name{
+    padding: 0px;
+    margin-left: 100px;
+}
+
+.host-name h3 {
+    font-size: 30px;
+    font-weight: 500;
+    color: #242222;
+    margin-top: 4rem;
+}
+
+.languages-section {
+    margin-top: 16px; /* Space between host info and languages */
+}
+
+.languages-section h4 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: #222;
+}
+
+.languages-section p {
+    font-size: 18px;
+    color: #555;
+    margin: 4px 0 0;
+}
+
+.message-section{
+    display: flex;
+    align-items: center; /* Aligns items vertically centered */
+    gap: 8px;
+    margin-top: 30px;
+}
+
+.message-section h2{
+    font-size: 32px;
+}
+
+.contact-host-btn{
+    margin-left: 80px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 13px 24px;
+    background: white;
+    border: 1px solid #DDDDDD;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #006AFF;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    max-width: fit-content;
+}
+
+.contact-host-btn:hover {
+    background-color: #F7F7F7;
 }
 
 /*-------------------------------------------------------ICONS-----------------------------------*/
@@ -1339,14 +1474,17 @@ button {
         opacity: 0;
     }
 }
+
 /*==================================================MEDIAQUERY++++++++++++++++++++++++++++*/
 @media (max-width: 1024px) {
     main {
         max-width: 90%;
     }
+
     .gallery {
         grid-template-columns: 1fr;
     }
+
     .property-content {
         grid-template-columns: 1fr;
     }
@@ -1356,53 +1494,81 @@ button {
     body {
         padding: 0.5rem;
     }
+
     header {
         flex-direction: column;
         padding: 5px;
     }
+
     .nav-links {
         flex-wrap: wrap;
         gap: 10px;
         justify-content: center;
     }
-    .gallery, .small-images {
+
+    .gallery,
+    .small-images {
         grid-template-columns: 1fr;
     }
-    .features-grid-property, .amenities-grid-property {
+
+    .features-grid-property,
+    .amenities-grid-property {
         grid-template-columns: 1fr;
     }
+
     .area-container {
         grid-template-columns: 1fr;
     }
+
     .room-grid {
         grid-template-columns: 1fr;
     }
+
     .tabs-property {
         flex-wrap: wrap;
         justify-content: center;
     }
-    .rules-grid, .location-list {
+
+    .rules-grid,
+    .location-list {
         grid-template-columns: 1fr;
     }
-    .member-banner, .booking-card, .total-section, .question-section {
+
+    .member-banner,
+    .booking-card,
+    .total-section,
+    .question-section {
         padding: 1rem;
         font-size: 0.9rem;
     }
+
     .buttons {
         flex-direction: column;
         gap: 10px;
         align-items: center;
     }
-    .sign-in-btn, .book-btn {
+
+    .sign-in-btn,
+    .book-btn {
         width: 100%;
     }
 }
 
 @media (max-width: 480px) {
-    .gallery, .property-text-deet-container, .question-section, .buttons, .search-container, .languages, .location-item {
+
+    .gallery,
+    .property-text-deet-container,
+    .question-section,
+    .buttons,
+    .search-container,
+    .languages,
+    .location-item {
         font-size: 0.85rem;
     }
-    .property-title, .rating, .total-amount {
+
+    .property-title,
+    .rating,
+    .total-amount {
         font-size: 1rem;
     }
 }

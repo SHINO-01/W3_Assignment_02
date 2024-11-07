@@ -11,7 +11,10 @@ body {
 
 /*header part*/
 header {
-    position: sticky;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     display: flex;
     justify-content: flex-end;
     /* Align all content to the right */
@@ -19,6 +22,7 @@ header {
     padding: 10px 20px;
     background-color: #93BAD7;
     height: 70px;
+    z-index: 50;
 }
 
 .nav-links {
@@ -72,7 +76,8 @@ main {
     max-height: 50%;
     margin: 20px auto;
     padding: 0 2vw;
-
+    overflow: hidden;
+    margin-top: 4.5rem;
 }
 
 .gallery {
@@ -120,25 +125,50 @@ main {
 }
 
 .image-overlay span {
-    margin-top: 60%;
-    margin-left: 45%;
     display: flex;
     align-items: center;
-    /* Center vertically */
     justify-content: center;
-    /* Center horizontally */
-    position: absolute;
+    position:absolute;
     color: white;
     background-color: rgba(0, 0, 0, 0.5);
     padding: 5px 10px;
     gap: 10px;
     border-radius: 40px;
-    font-size: 30px;
+    font-size: 25px;
     width: 120px;
-    /* Ensures the span fills its parent if needed */
     height: 60px;
-    /* Ensures the span fills its parent if needed */
+    bottom: 4%;
+    right: 4%;
 }
+.image-overlay span:hover{
+    background-color: rgba(82, 82, 107,0.5);
+    cursor: pointer;
+}
+
+/* Medium screens (tablets) */
+@media (max-width: 768px) {
+    .image-overlay span {
+        font-size: 24px;
+        padding: 4px 8px;
+        width: 100px;
+        height: 50px;
+        margin-top: 40%;
+        margin-left: 30%;
+    }
+}
+
+/* Small screens (mobile) */
+@media (max-width: 480px) {
+    .image-overlay span {
+        font-size: 20px;
+        padding: 3px 6px;
+        width: 100px;
+        height: 50px;
+        margin-top: 35%;
+        margin-left: 25%;
+    }
+}
+
 
 /*save and share buttons*/
 .buttons {
@@ -167,31 +197,33 @@ main {
 button {
     border: none;
     padding: 10px 15px;
-    border-radius: 20px;
+    border-radius: 25px;
     cursor: pointer;
     font-size: 1.2em;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .share {
-    background-color: #007bff;
-    color: white;
+    background-color: white;
+    color: blue;
+    border: 2px solid blue;
 }
 
 .save {
-    background-color: #ff4b4b;
-    color: white;
+    background-color: white;
+    color: red;
+    border: 2px solid red;
 }
 
 .share:hover {
-    background-color: #0056b3;
+    background-color: #a9c6e7;
     /* Darker blue on hover */
     transform: scale(1.05);
     /* Slight scale-up */
 }
 
 .save:hover {
-    background-color: #d43f3f;
+    background-color: #f0b9b9;
     /* Darker red on hover */
     transform: scale(1.05);
     /* Slight scale-up */
@@ -1225,7 +1257,7 @@ button {
     flex: 1;
     /* Allows the reviews to take up remaining space */
     margin-bottom: 24px;
-    margin-top: 30px;
+    margin-top: 25px;
 }
 
 .recent-reviews h2 {
@@ -1243,7 +1275,7 @@ button {
 
 .reviews-scroll {
     display: flex;
-    overflow-x: scroll;
+    overflow: hidden;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
@@ -1393,7 +1425,7 @@ button {
 }
 
 .contact-host-btn:hover {
-    background-color: #F7F7F7;
+    background-color: #c4c5cc;
 }
 
 /*-------------------------------------------------------ICONS-----------------------------------*/
@@ -1572,3 +1604,238 @@ button {
         font-size: 1rem;
     }
 }
+@media (max-width: 768px) {
+    .rating-review-container {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .rating-big {
+        font-size: 48px;
+    }
+
+    .exceptional-big {
+        font-size: 28px;
+    }
+
+    .info-icon-late {
+        width: 14px;
+        height: 14px;
+        font-size: 10px;
+    }
+    .recent-reviews{
+        margin-top: 15px;
+    }
+    .recent-reviews h2 {
+        font-size: 26px;
+    }
+
+    .review-card {
+        width: 200px; /* Full width for tablet screens */
+    }
+
+    .see-all-reviews {
+        padding: 10px 18px;
+        font-size: 15px;
+    }
+
+    .about-section h2 {
+        font-size: 28px;
+    }
+
+    .host-name h3 {
+        font-size: 26px;
+        margin-top: 2rem;
+    }
+
+    .languages-section h4 {
+        font-size: 18px;
+    }
+
+    .languages-section p {
+        font-size: 16px;
+    }
+
+    .contact-host-btn {
+        margin-left: 0;
+        padding: 12px 20px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .rating-big {
+        font-size: 36px;
+    }
+
+    .exceptional-big {
+        font-size: 24px;
+    }
+
+    .info-icon-late {
+        width: 12px;
+        height: 12px;
+        font-size: 9px;
+    }
+
+    .reviews-count {
+        font-size: 16px;
+    }
+    .recent-reviews{
+        margin-top: 10px;
+    }
+    .recent-reviews h2 {
+        font-size: 22px;
+    }
+
+    .see-all-reviews {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    .about-section h2 {
+        font-size: 24px;
+    }
+
+    .host-name h3 {
+        font-size: 24px;
+        margin-top: 1.5rem;
+    }
+
+    .languages-section h4 {
+        font-size: 16px;
+    }
+
+    .languages-section p {
+        font-size: 14px;
+    }
+
+    .message-section h2 {
+        font-size: 24px;
+    }
+
+    .contact-host-btn {
+        margin-left: 0;
+        padding: 10px 18px;
+        font-size: 14px;
+    }
+}
+/*========================================JS MODAL CURRENCY==========================================*/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 80;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  }
+  
+  .modal-content-loc {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 2px solid #888;
+    width: 30%;
+    border-radius: 25px;
+  }
+  
+  .modal-header-loc {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    border-bottom: 1px solid #e8e8e8;
+    padding-bottom: 10px;
+  }
+  
+  .close-button-loc {
+    color: #007bff;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 10px;
+    padding: 5px;
+  }
+  
+  .close-button-loc:hover,
+  .close-button-loc:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .modal-body-loc {
+    padding: 20px 0;
+  }
+  .modal-body-loc i{
+    font-size: 25px;
+  }
+  .modal-body-loc p{
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  
+.form-group-loc {
+    margin-bottom: 15px;
+}
+
+.form-group-loc label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #666; /* Grey color for label */
+    font-size: 14px;
+}
+
+.form-group-loc select {
+    width: 100%;
+    padding: 16px;
+    border: 1px solid #007bff; /* Border color */
+    border-radius: 8px; /* Rounded corners */
+    background-color: #fff; /* White background */
+    font-size: 16px;
+    color: #333; /* Dark text color */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: border-color 0.3s ease; /* Smooth transition */
+}
+
+.form-group-loc select:focus {
+    outline: none;
+    border-color: #0056b3; /* Darker blue on focus */
+    box-shadow: 0 0 8px rgba(0, 91, 187, 0.3); /* Shadow on focus */
+}
+
+.form-group-loc select:disabled {
+    color: #7a7676; /* Light grey text color for disabled state */
+    background-color: #f2f2f2; /* Light grey background for disabled state */
+    border-color: #ddd; /* Light border color for disabled state */
+    cursor: not-allowed;
+}
+
+
+  
+  .modal-footer-loc {
+    border-top: 1px solid #e8e8e8;
+    padding-top: 10px;
+    text-align: right;
+  }
+  
+  .save-button-loc {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .save-button-loc:hover {
+    background-color: #0056b3;
+  }

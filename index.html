@@ -13,7 +13,7 @@
     <header>
         <nav>
             <div class="nav-links">
-                <a href="#"><i class="fa-solid fa-globe"></i> United States</a>
+                <a href="#"><i class="fa-solid fa-globe"></i> <span id="country-name">United States</span></a>
                 <a href="#">Trip Boards</a>
                 <a href="#">List your property</a>
                 <a href="#">Help</a>
@@ -22,6 +22,38 @@
             </div>
         </nav>
     </header>
+    <!--==============================================First Modal View========================================-->
+    <div class="modal" id="display-settings-modal">
+        <div class="modal-content-loc">
+            <div class="modal-header-loc">
+                <span class="close-button-loc"><i class="fa-solid fa-xmark"></i></span>
+                <h2>Display settings</h2>
+            </div>
+            <div class="modal-body-loc">
+                <p><i class="fa-solid fa-triangle-exclamation"></i><b> Changing your region could change your rewards
+                        program </b><br></p>
+                <p>To stay with your current rewards program keep your region the same. One Key is currently only
+                    available in select regions.</p>
+                <div class="form-group-loc">
+                    <label for="region">Region:</label>
+                    <select id="region">
+                        <!-- Options will be loaded dynamically from the text file -->
+                    </select>
+                </div>
+
+                <div class="form-group-loc">
+                    <label for="currency">Currency:</label>
+                    <select id="currency" disabled>
+                        <!-- Selected currency will be displayed here -->
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer-loc">
+                <button class="save-button-loc">Save</button>
+            </div>
+        </div>
+    </div>
+    <!--=========================================Visible part of the website===================================-->
     <main>
         <div class="buttons">
             <a href="#" class="back-arrow">← See all properties</a>
@@ -678,5 +710,6 @@
         </div>
     </main>
 </body>
+<script src="script.js"></script>
 
 </html>

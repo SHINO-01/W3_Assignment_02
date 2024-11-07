@@ -1,0 +1,30 @@
+United States:USD
+Portugal:EUR
+Japan:JPY
+Uruguay:UYU
+Sweden:SEK
+India:INR
+Australia:AUD
+Canada:CAD
+Brazil:BRL
+China:CNY
+South Korea:KRW
+Germany:EUR
+France:EUR
+Italy:EUR
+Spain:EUR
+Russia:RUB
+Mexico:MXN
+Saudi Arabia:SAR
+South Africa:ZAR
+Turkey:TRY
+Switzerland:CHF
+United Kingdom:GBP
+New Zealand:NZD
+Argentina:ARS
+Indonesia:IDR
+Malaysia:MYR
+Thailand:THB
+Vietnam:VND
+Egypt:EGP
+Philippines:PHP

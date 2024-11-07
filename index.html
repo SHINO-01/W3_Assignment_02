@@ -78,6 +78,34 @@
                 </div>
             </div>
         </div>
+        <!--==========================================MODAL GALLERY========================================================-->
+        <div class="modal-gallery" id="gallery-display-modal">
+            <div class="modal-content-gallery">
+                <div class="modal-header-gallery">
+                    <button class="close-btn-gallery">×</button>
+                </div>
+                <div class="modal-body-gallery">
+                    <div class="modal-carousel-gallery">
+                        <img src="images/image01.png" alt="Image 1" class="modal-image active-gallery">
+                        <img src="images/image02.png" alt="Image 2" class="modal-image">
+                        <img src="images/image03.png" alt="Image 3" class="modal-image">
+
+                        <!-- Navigation Buttons -->
+                        <button class="nav-btn-gallery prev-btn-gallery">‹</button>
+                        <button class="nav-btn-gallery next-btn-gallery">›</button>
+                    </div>
+                </div>
+                <div class="modal-info-gallery">
+                    <h2 class="modal-title-gallery">Juneau Vacation Rental | 2BR | 1BA | 1,115 Sq Ft | Stairs Required
+                    </h2>
+                    <div class="modal-navigation-gallery">
+                        <span class="modal-count-gallery">1/3</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--====================================================Property section===========================================-->
         <div class="property-content">
             <div class="left-content-property">
                 <nav class="tabs-property">
@@ -403,6 +431,7 @@
                         <button class="sign-in-btn">Sign in</button>
                     </div>
                 </div>
+                <!--==========================================booking cardpart================================================-->
                 <div class="booking-card">
                     <div class="price">
                         $134 <span class="per-night">per night</span>
@@ -441,7 +470,6 @@
                         <div class="date-value">2 travelers</div>
                     </div>
 
-                    <!-- Total -->
                     <div class="total-section">
                         <div class="total-label">Total</div>
                         <div class="total-amount">$543</div>
@@ -453,6 +481,44 @@
 
                     <button class="book-btn">Book now</button>
                     <div class="charge-note">You will not be charged yet</div>
+                </div>
+                <!--==============================================Booking Modal============================================-->
+                <div class="modal-booking" id="booking-modal">
+                    <div class="modal-content-booking">
+                        <div class="modal-header-booking">
+                            <h3>Travelers</h3>
+                            <span class="close-btn-booking">&times;</span>
+                        </div>
+                        <div class="modal-body-booking">
+                            <div class="travelers-container-booking">
+                                <div class="travelers-row-booking">
+                                    <label for="adults">Adults</label>
+                                    <div class="travelers-input-booking">
+                                        <button class="decrement-btn-booking">-</button>
+                                        <input type="number" id="adults-booking" value="2" min="1" max="10" />
+                                        <button class="increment-btn-booking">+</button>
+                                    </div>
+                                </div>
+                                <div class="travelers-row-booking">
+                                    <label for="children-booking">Children</label>
+                                    <div class="travelers-input-booking">
+                                        <button class="decrement-btn-booking">-</button>
+                                        <input type="number" id="children-booking" value="0" min="0" max="10" />
+                                        <button class="increment-btn-booking">+</button>
+                                    </div>
+                                </div>
+                                <div class="travelers-row-booking">
+                                    <label>
+                                        <input type="checkbox-booking" id="pets-booking" />
+                                        I am traveling with pets
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer-booking">
+                            <button class="modal-btn-booking">Done</button>
+                        </div>
+                    </div>
                 </div>
                 <div class="contact-host">
                     <a href="#" class="contact-link">Contact host</a>

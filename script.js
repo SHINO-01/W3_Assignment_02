@@ -155,6 +155,7 @@ prevBtn.addEventListener('click', () => {
 closeBtn.addEventListener('click', () => {
     galleryModal.style.display = 'none';
     document.body.classList.remove("no-scroll");
+    currentIndex = 0;
 });
 
 // Event listener to open the gallery modal
@@ -169,5 +170,26 @@ document.querySelector('.image-overlay span').addEventListener('click', () => {
 //===============================================Share FUNCTION===========================================
 
 //==============================================TRAVELLER SECTION=============================================
+const bookingModal = document.getElementById("booking-modal");
+const openTravelersModal = document.getElementById("open-travelers-modal");
+const closeBookingModal = document.querySelector(".close-btn-booking");
+
+openTravelersModal.addEventListener("click", () => {
+    bookingModal.style.display = bookingModal.style.display === "block" ? "none" : "block";
+});
+
+closeBookingModal.addEventListener("click", () => {
+    bookingModal.style.display = "none";
+});
+
+document.querySelector(".modal-btn-booking").addEventListener("click", () => {
+    bookingModal.style.display = "none";
+});
+
+document.addEventListener("click", (event) => {
+    if (!bookingModal.contains(event.target) && !openTravelersModal.contains(event.target)) {
+        bookingModal.style.display = "none";
+    }
+});
 
 //==============================================CALLENDER OPTIONAL=============================================

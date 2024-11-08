@@ -166,7 +166,33 @@ document.querySelector('.image-overlay span').addEventListener('click', () => {
 });
 
 //==============================================SAVE FUNCTION==============================================
+const saveButton = document.querySelector('.save');
+const saveIcon = saveButton.querySelector('i');
 
+// Check if the save state is stored in session storage
+const isSaved = sessionStorage.getItem('isSaved') === 'true';
+
+// Set the initial state of the save button based on the stored value
+if (isSaved) {
+    saveIcon.classList.remove('fa-regular', 'fa-heart');
+    saveIcon.classList.add('fa-solid', 'fa-heart');
+} else {
+    saveIcon.classList.remove('fa-solid', 'fa-heart');
+    saveIcon.classList.add('fa-regular', 'fa-heart');
+}
+
+saveButton.addEventListener('click', () => {
+    // Toggle the save state
+    if (saveIcon.classList.contains('fa-regular', 'fa-heart')) {
+        saveIcon.classList.remove('fa-regular', 'fa-heart');
+        saveIcon.classList.add('fa-solid', 'fa-heart');
+        sessionStorage.setItem('isSaved', 'true');
+    } else {
+        saveIcon.classList.remove('fa-solid', 'fa-heart');
+        saveIcon.classList.add('fa-regular', 'fa-heart');
+        sessionStorage.setItem('isSaved', 'false');
+    }
+});
 //===============================================Share FUNCTION===========================================
 
 //==============================================TRAVELLER SECTION=============================================

@@ -1888,11 +1888,11 @@ button {
 
 .modal-content-gallery {
     position: relative;
-    margin: 10% auto;
+    margin: 4% auto;
     background-color: #1a1a3d; /* Dark background as per your screenshot */
     width: 80%;
-    height: 65%;
-    max-width: 1000px;
+    height: 800px;
+    max-width: 1200px;
     padding: 20px;
     border-radius: 25px;
 }
@@ -1923,8 +1923,8 @@ button {
 
 .modal-carousel-gallery {
     position: relative;
-    max-width: 800px;
-    height: 500px;
+    max-width: 1000px;
+    height: 650px;
     overflow: hidden;
     border-radius: 25px;
 }
@@ -2040,6 +2040,9 @@ button {
     cursor: pointer;
     color: #4123eb;
 }
+.close-btn-booking:hover{
+    color: #333;
+}
 
 .modal-body-booking {
     display: flex;
@@ -2061,7 +2064,6 @@ button {
     align-items: center;
     gap: 8px;
 }
-/*=============================================TEST CASE=====================================*/
 /* Minimalistic style for travelers modal inputs */
 .travelers-input-booking input[type="number"] {
     width: 50px;

@@ -27,4 +27,4 @@ Malaysia:MYR
 Thailand:THB
 Vietnam:VND
 Egypt:EGP
-Philippines:PHP
+Philippines:PNY

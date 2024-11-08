@@ -1873,14 +1873,16 @@ button {
 /*=====================================================JS MODAL GALLERY=================================================*/
 /* General Modal Styling */
 .modal-gallery {
-    display: none;
+    display: block;
     position: fixed;
     z-index: 80;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
 }
 
 .modal-content-gallery {
@@ -1994,9 +1996,14 @@ button {
     border-radius: 5px;
     color: #fff;
 }
+
+.nav-btn-gallery:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
  /*=====================================MODAL TRAVELLER NUMBER==================================================*/
  .modal-booking {
-    display: block;
+    display: none;
     position: fixed;
     z-index: 1;
     left: 0;

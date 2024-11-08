@@ -94,5 +94,80 @@ window.addEventListener("load", function () {
     localStorage.clear();
 });
 //==============================================Gallery MODAL===========================================================
+const galleryModal = document.getElementById("gallery-display-modal");
+const closeBtn = document.querySelector(".close-btn-gallery");
+const prevBtn = document.querySelector(".prev-btn-gallery");
+const nextBtn = document.querySelector(".next-btn-gallery");
+const modalImage = document.querySelector(".modal-image");
+const modalTitle = document.querySelector(".modal-title-gallery");
+const modalCount = document.querySelector(".modal-count-gallery");
 
-//==============================================
+let images = [];
+let imageTitles = [];
+let currentIndex = 0;
+
+// Fetch the image data from the text file
+fetch('image-titles.txt')
+    .then(response => response.text())
+    .then(data => {
+        const lines = data.trim().split('\n');
+        lines.forEach(line => {
+            const [filename, title] = line.split('-'); // Split line by delimiter
+            images.push(`travel-images/${filename.trim()}`);
+            imageTitles.push(title.trim());
+        });
+        updateGalleryView(); // Initialize gallery view
+    })
+    .catch(error => console.error('Error loading image titles:', error));
+
+// Function to update the gallery view based on current index
+function updateGalleryView() {
+    modalImage.src = images[currentIndex];
+    modalTitle.textContent = imageTitles[currentIndex];
+    modalCount.textContent = `${currentIndex + 1} / ${images.length}`;
+
+    // Enable/disable navigation buttons at boundaries
+    prevBtn.disabled = currentIndex === 0;
+    nextBtn.disabled = currentIndex === images.length - 1;
+
+    // Styling for disabled buttons
+    prevBtn.style.opacity = currentIndex === 0 ? 0.5 : 1;
+    nextBtn.style.opacity = currentIndex === images.length - 1 ? 0.5 : 1;
+}
+
+// Event listener for Next button
+nextBtn.addEventListener('click', () => {
+    if (currentIndex < images.length - 1) {
+        currentIndex++;
+        updateGalleryView();
+    }
+});
+
+// Event listener for Previous button
+prevBtn.addEventListener('click', () => {
+    if (currentIndex > 0) {
+        currentIndex--;
+        updateGalleryView();
+    }
+});
+
+// Event listener to close the gallery modal
+closeBtn.addEventListener('click', () => {
+    galleryModal.style.display = 'none';
+    document.body.classList.remove("no-scroll");
+});
+
+// Event listener to open the gallery modal
+document.querySelector('.image-overlay span').addEventListener('click', () => {
+    galleryModal.style.display = 'block';
+    document.body.classList.add("no-scroll");
+    updateGalleryView();
+});
+
+//==============================================SAVE FUNCTION==============================================
+
+//===============================================Share FUNCTION===========================================
+
+//==============================================TRAVELLER SECTION=============================================
+
+//==============================================CALLENDER OPTIONAL=============================================

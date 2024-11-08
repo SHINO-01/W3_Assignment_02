@@ -1,0 +1,11 @@
+image01.png-Juneau Vacation Rental | 2BR | 1BA | 1,115 Sq Ft | Stairs Required
+image02.png-Cozy Cabin Overlooking Serene Lake | 1BR | 1BA | Perfect for Solo Retreats
+image03.png-Luxury Mountain Lodge | 4BR | 3BA | Private Hot Tub | Pet-Friendly
+image04.png-Modern Beachfront Condo | 2BR | 2BA | Ocean View | Pool Access
+image05.png-Rustic Forest Cabin | 3BR | 2BA | Hiking Trails Nearby | Pet-Friendly
+image06.png-Charming Countryside Cottage | 2BR | 1BA | Farm Views | Quiet Getaway
+image07.png-Spacious Desert Villa | 5BR | 4BA | Infinity Pool | Sun Deck
+image08.png-Elegant City Loft | 1BR | 1BA | Heart of Downtown | Walk to Attractions
+image09.png-Lake House with Private Dock | 3BR | 2BA | Kayaks Included
+image10.png-Romantic Vineyard Bungalow | 1BR | 1BA | Wine Tasting Nearby
+image11.png-Family Friendly Suburban Home | 4BR | 3BA | Backyard Playground

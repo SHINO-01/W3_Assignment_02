@@ -41,6 +41,7 @@ git clone https://github.com/SHINO-01/W3_Assignment_02.git
 # Use VS Code Live Server for testing this code
 ```
 ## Folder Structure:
+```
 -W3_Assignment_02
     |
     |------\images
@@ -55,3 +56,4 @@ git clone https://github.com/SHINO-01/W3_Assignment_02.git
     |------\readme.md
     |------\script.js
     |------\style.css
+```

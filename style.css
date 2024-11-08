@@ -5,7 +5,7 @@
 }
 
 .no-scroll {
-    overflow: hidden;
+    overflow: visible;
 }
 
 body {
@@ -211,6 +211,7 @@ button {
     background-color: white;
     color: blue;
     border: 2px solid blue;
+    border-radius: 25px;
 }
 
 .save {
@@ -2150,4 +2151,157 @@ button {
     margin-top: 10px;
 }
 
+/*==============================================================SHARE MODAL===================================*/
+/* Wrapper around share button and modal */
+.share-wrapper {
+    position: relative;
+    display: inline-block;
+}
 
+.share {
+    background-color: #f0f0f7;
+    padding: 10px;
+    font-size: 16px;
+    color: #4144fd;
+    border-radius: 8px;
+    border: 2px solid #4144fd;
+    cursor: pointer;
+}
+
+/* Share Modal */
+.modal-share {
+    display: none; /* Hidden by default */
+    position: absolute;
+    z-index: 10;
+    top: 15%; /* Aligns modal below the share button */
+    right: 5%;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);
+    overflow: auto;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    border-radius: 12px;
+    margin-top: 10px; /* Adds spacing between button and modal */
+}
+
+/* Toggle modal visibility when hovering over .share-wrapper */
+.share-wrapper:hover .modal-share {
+    display: block;
+}
+
+/* Modal Content Styling */
+.modal-share-content {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    width: 320px;
+    max-width: 100%;
+}
+
+.modal-share-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+
+.share-modal-txt {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.close-button-share {
+    color: #4144fd;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button-share:hover {
+    color: black;
+}
+
+.modal-share-body {
+    text-align: center;
+    margin-top: 1.2rem;
+}
+
+.modal-map-container {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.modal-share-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.modal-location-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    height: 180px;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    text-align: left;
+}
+
+.modal-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.modal-location,
+.modal-rating {
+    font-size: 1.09rem;
+    font-weight: 500;
+    margin-bottom: 7px;
+}
+
+.modal-share-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 15px;
+    justify-items: center;
+    margin-top: 20px;
+}
+
+.modal-share-button,
+.modal-copy-link-button {
+    background-color: #f0f0f7;
+    padding: 10px;
+    text-decoration: none;
+    color: rgb(36, 69, 219);
+    border-radius: 12px;
+    transition: background-color 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    border: 2px solid rgb(36, 69, 219);
+}
+
+.modal-share-button:hover,
+.modal-copy-link-button:hover {
+    background-color: #656569;
+    color: white;
+}
+
+.modal-copy-link-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+  
+  
+  

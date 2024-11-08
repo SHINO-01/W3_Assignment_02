@@ -194,7 +194,31 @@ saveButton.addEventListener('click', () => {
     }
 });
 //===============================================Share FUNCTION===========================================
+document.addEventListener("DOMContentLoaded", function () {
+    const shareButton = document.getElementById("share-button");
+    const modal = document.getElementById("modal-share-div");
+    const closeButton = document.querySelector(".close-button-share");
 
+    // Toggle modal visibility on share button click
+    shareButton.addEventListener("click", function (event) {
+        event.stopPropagation(); // Prevent event bubbling
+        modal.style.display = modal.style.display === "block" ? "none" : "block";
+    });
+
+    // Close modal when close icon is clicked
+    closeButton.addEventListener("click", function () {
+        modal.style.display = "none";
+    });
+
+    // Close modal when clicking outside the modal content
+    window.addEventListener("click", function (event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+});
+
+  
 //==============================================TRAVELLER SECTION=============================================
 // Selecting the elements
 const travelersInputField = document.querySelector('.travelers-input');

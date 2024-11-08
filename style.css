@@ -2005,24 +2005,22 @@ button {
     opacity: 0.5;
   }
  /*=====================================MODAL TRAVELLER NUMBER==================================================*/
- .modal-booking-dropdown {
-    display: none; /* Initially hidden */
-    position: absolute;
-    top: calc(100% + 5px); /* Positioned right below the travelers input */
-    left: 0;
-    width: 100%;
-    border: 1px solid #e0e0e0;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    z-index: 10;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(8px);
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-}
 
 .modal-content-booking {
-    padding: 10px 0;
+    display: none;
+    border: 2px solid #b4b2b2;
+    border-radius: 25px;
+    opacity: 0; /* Start with invisible */
+    transition: opacity 0.3s ease;
+    padding: 25px;
+    margin-bottom: 1.2rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+.modal-content-booking.show {
+    display: block;
+    opacity: 1;
 }
 
 .modal-header-booking {
@@ -2040,20 +2038,21 @@ button {
 .close-btn-booking {
     font-size: 20px;
     cursor: pointer;
-    color: #666;
+    color: #4123eb;
 }
 
 .modal-body-booking {
     display: flex;
     flex-direction: column;
     gap: 16px;
+    margin-bottom: 1.2rem;
 }
 
 .travelers-row-booking {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 16px;
+    font-size: 18px;
     color: #1a1a1a;
 }
 
@@ -2062,19 +2061,86 @@ button {
     align-items: center;
     gap: 8px;
 }
-
-.increment-btn-booking, .decrement-btn-booking {
-    width: 40px;
-    height: 40px;
-    background-color: #eee;
-    border: 1px solid #e0e0e0;
-    border-radius: 50%;
-    color: #333;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
+/*=============================================TEST CASE=====================================*/
+/* Minimalistic style for travelers modal inputs */
+.travelers-input-booking input[type="number"] {
+    width: 50px;
+    font-size: 18px;
     text-align: center;
+    border: 1px solid #88888a;
+    background-color: #f3f3f3;
+    color: #333;
+    border-radius: 4px;
+    outline: none;
+    padding: 6px 0;
+    margin: 0 6px;
+    -moz-appearance: textfield; /* Firefox */
+    -webkit-appearance: none; /* Safari and Chrome */
+    appearance: none; /* Standard */
 }
+.travelers-input-booking input[type="number"]::-webkit-inner-spin-button,
+.travelers-input-booking input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none; /* Chrome */
+    margin: 0; /* Optional: Remove margin */
+}
+
+.travelers-input-booking input[type="number"]:focus {
+    background-color: #e9e9e9; /* Lighter shade on focus */
+}
+
+.travelers-input-booking button {
+    background-color: #f3f3f3;
+    color: #333;
+    padding: 10px 12px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+    border: 1px solid #88888a;
+    font-weight: 600;
+}
+.travelers-input-booking button:hover {
+    background-color: #e0e0e0; /* Slight color change on hover */
+}
+
+.travelers-input-booking button:active {
+    background-color: #ccc; /* Darker shade on click */
+}
+
+.travelers-row-booking{
+    margin-bottom: 20px;
+}
+/* Minimalistic style for checkbox */
+.travelers-row-booking label {
+    font-size: 16px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.travelers-row-booking input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #0066ff; /* Color of checkbox */
+}
+
+/* Minimal modal button */
+.modal-btn-booking {
+    background-color: #0066ff;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    font-size: 18px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.modal-btn-booking:hover {
+    background-color: #0051cc;
+}
+
 
 .modal-footer-booking {
     display: flex;
@@ -2082,14 +2148,4 @@ button {
     margin-top: 10px;
 }
 
-.modal-btn-booking {
-    background-color: #0066ff;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-}
 

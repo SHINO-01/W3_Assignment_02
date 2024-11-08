@@ -170,26 +170,88 @@ document.querySelector('.image-overlay span').addEventListener('click', () => {
 //===============================================Share FUNCTION===========================================
 
 //==============================================TRAVELLER SECTION=============================================
-const bookingModal = document.getElementById("booking-modal");
-const openTravelersModal = document.getElementById("open-travelers-modal");
-const closeBookingModal = document.querySelector(".close-btn-booking");
+// Selecting the elements
+const travelersInputField = document.querySelector('.travelers-input');
+const bookingModal = document.getElementById('booking-modal');
+const closeBtnBooking = document.querySelector('.close-btn-booking');
+const doneBtnBooking = document.querySelector('.modal-btn-booking');
+const adultsInput = document.getElementById('adults-booking');
+const childrenInput = document.getElementById('children-booking');
+const decrementBtns = document.querySelectorAll('.decrement-btn-booking');
+const incrementBtns = document.querySelectorAll('.increment-btn-booking');
 
-openTravelersModal.addEventListener("click", () => {
-    bookingModal.style.display = bookingModal.style.display === "block" ? "none" : "block";
+// Function to smoothly show the modal
+function openModal() {
+    bookingModal.style.display = 'block';
+    setTimeout(() => {
+        bookingModal.classList.add('show'); // Smooth fade-in effect
+        updateButtonStates(); // Check button states on open
+    }, 10);
+}
+
+// Function to smoothly hide the modal
+function closeModal() {
+    bookingModal.classList.remove('show'); // Smooth fade-out effect
+    setTimeout(() => {
+        bookingModal.style.display = 'none';
+    }, 300); // Delay to match the CSS transition duration
+}
+
+// Event listener to open the modal on traveler input click
+travelersInputField.addEventListener('click', openModal);
+
+// Event listener to close the modal on close button click
+closeBtnBooking.addEventListener('click', closeModal);
+
+// Update button states based on input values
+function updateButtonStates() {
+    // For adults
+    incrementBtns[0].disabled = parseInt(adultsInput.value) >= parseInt(adultsInput.max);
+    decrementBtns[0].disabled = parseInt(adultsInput.value) <= parseInt(adultsInput.min);
+
+    // For children
+    incrementBtns[1].disabled = parseInt(childrenInput.value) >= parseInt(childrenInput.max);
+    decrementBtns[1].disabled = parseInt(childrenInput.value) <= parseInt(childrenInput.min);
+
+    // Style the buttons when disabled
+    incrementBtns.forEach(btn => {
+        btn.style.opacity = btn.disabled ? '0.5' : '1';
+        btn.style.cursor = btn.disabled ? 'not-allowed' : 'pointer';
+    });
+    decrementBtns.forEach(btn => {
+        btn.style.opacity = btn.disabled ? '0.5' : '1';
+        btn.style.cursor = btn.disabled ? 'not-allowed' : 'pointer';
+    });
+}
+
+// Event listener for increment and decrement buttons
+incrementBtns.forEach(btn => {
+    btn.addEventListener('click', (event) => {
+        const inputField = event.target.closest('.travelers-input-booking').querySelector('input[type="number"]');
+        const max = parseInt(inputField.getAttribute('max'));
+        if (parseInt(inputField.value) < max) {
+            inputField.value = parseInt(inputField.value) + 1;
+            updateButtonStates(); // Update button states after increment
+        }
+    });
 });
 
-closeBookingModal.addEventListener("click", () => {
-    bookingModal.style.display = "none";
+decrementBtns.forEach(btn => {
+    btn.addEventListener('click', (event) => {
+        const inputField = event.target.closest('.travelers-input-booking').querySelector('input[type="number"]');
+        const min = parseInt(inputField.getAttribute('min'));
+        if (parseInt(inputField.value) > min) {
+            inputField.value = parseInt(inputField.value) - 1;
+            updateButtonStates(); // Update button states after decrement
+        }
+    });
 });
 
-document.querySelector(".modal-btn-booking").addEventListener("click", () => {
-    bookingModal.style.display = "none";
-});
-
-document.addEventListener("click", (event) => {
-    if (!bookingModal.contains(event.target) && !openTravelersModal.contains(event.target)) {
-        bookingModal.style.display = "none";
-    }
+// Event listener for Done button to update travelers field and close modal
+doneBtnBooking.addEventListener('click', () => {
+    const totalTravelers = parseInt(adultsInput.value) + parseInt(childrenInput.value);
+    travelersInputField.querySelector('.date-value').textContent = `${totalTravelers} traveler${totalTravelers > 1 ? 's' : ''}`;
+    closeModal();
 });
 
 //==============================================CALLENDER OPTIONAL=============================================
